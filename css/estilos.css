@@ -90,7 +90,7 @@ header .buscar input[type="text"]:focus {
 
 header .buscar .icono {
     color: rgba(255,255,255,.7);
-    position: absolute;
+    position: relative;
     right: 0;
     background: none;
     border: none;
@@ -101,7 +101,7 @@ header .buscar .icono {
 }
 
 header .buscar .icono:hover {
-    color #fff;
+    color: #fff;
 }
 
 header .menu {
