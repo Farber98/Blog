@@ -31,4 +31,29 @@ function pagina_actual(){
     return isset($_GET['pagina']) ? (int)$_GET['pagina'] : 1;
 }
 
+function id_articulos($id)  //Saneamos y casteamos el id de un articulo.
+{
+    return (int)limpiarDatos($id);
+}
+
+function obtener_post_por_id($conexion, $id)
+{
+    $statement = $conexion->query("SELECT * FROM articulos WHERE id = $id LIMIT 1");    //Query simple.
+    $statement = $statement->fetchAll();    //Procesamos.
+    return ($statement) ? $statement : false;   //Si hay un resultado, lo devuelve. Sino devuelve false.
+}
+
+function fecha($fecha)    //Estetizamos la fecha.
+{
+    $timestamp = strtotime($fecha); //strtotime() convierte de una cadena de texto a tiempo.
+    //Array para transformar los meses a spanish.
+    $meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto','Septiembre','Octubre','Noviembre', 'Diciembre'];
+    
+    $dia = date('d',$timestamp);    //d: Día del mes, 2 dígitos con ceros iniciales
+    $mes = date('m', $timestamp) -1 ;   //m: Representación numérica de una mes, con ceros iniciales. -1 Xq array empieza desde el cero.
+    $year = date('Y', $timestamp);  //Y: Una representación numérica completa de un año, 4 dígitos
+
+    $fecha = "$dia de " . $meses[$mes] . " del $year";
+    return $fecha;
+}
 ?>

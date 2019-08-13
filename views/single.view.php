@@ -5,20 +5,12 @@
 <div class="contenedor">
     <div class="post">
         <article>
-            <h2 class="titulo">Titulo del articulo</h2>
-            <p class="fecha">1 de enero de 2016</p>
+            <h2 class="titulo"><?php echo $post['titulo']; ?></h2>
+            <p class="fecha"><?php echo fecha($post['fecha']); ?></p>
             <div class="thumb">
-                <a href="#">
-                    <img src="<?php echo RUTA; ?>/imagenes/1.jpg" alt=""> <!-- No esta cargando la imagen. ver porque. -->
-                </a>
+                    <img src="<?php echo RUTA; ?>/imagenes/<?php echo $post['thumb']; ?>" alt="<?php echo $post['titulo']; ?>"> <!-- No esta cargando la imagen. ver porque. -->
             </div>
-            <p class="intro">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, omnis.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, omnis.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, omnis.   <!-- Reutilizamos los estilos de la intro pero es el texto. -->
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, omnis.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, omnis.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, omnis.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, omnis.</p>
+            <p class="intro"><?php echo $post['texto']; ?></p> <!-- Reutilizamos los estilos de la intro pero es el texto. -->
         </article>
     </div>
 </div>
