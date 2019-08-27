@@ -2,7 +2,7 @@
 //Contiene configuracion de nuestro sitio web:
 //Cantidad de articulos a cargar, usuario y contraseña...
 
-define('RUTA', 'http://localhost/Practicas/Blog/'); //Definimos la ruta
+define('RUTA', 'http://localhost/cursoPHP/Practicas/Blog/'); //Definimos la ruta
 
 //Guardamos toda la informacion relacionada con la bd
 $bd_config = array(

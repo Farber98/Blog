@@ -1,32 +1,23 @@
 <?php require 'header.php'; //Cargamos el header.?>
 <div class="contenedor">
-    <div class="post">
-        <article>
-            <h2 class="titulo"><a href="">Titulo del articulo</a></h2>
-            <p class="fecha">1 de enero de 2016</p>
-            <div class="thumb">
-                <a href="#">
-                    <img src="<?php echo RUTA; ?>/imagenes/1.jpg" alt="">
-                </a>
-            </div>
-            <p class="intro">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, omnis.</p>
-            <a href="#" class="continuar">Leer mas</a>
-        </article>
-    </div>
-
-    <div class="post">
-        <article>
-            <h2 class="titulo"><a href="">Titulo del articulo</a></h2>
-            <p class="fecha">1 de enero de 2016</p>
-            <div class="thumb">
-                <a href="#">
-                    <img src="<?php echo RUTA;?>/imagenes/2.jpg" alt="">
-                </a>
-            </div>
-                <p class="intro">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, omnis.</p>
-                <a href="#" class="continuar">Leer mas</a>
-        </article>
-    </div>
+    
+    <?php foreach($posts as $post): ?>  <!-- Cargamos dinamicamente la BD. -->
+        <div class="post">
+            <article>
+                <h2 class="titulo"><a href="single.php?=id<?php echo $post['id']; ?>"><?php echo $post['titulo'];?></a></h2> <!-- Llenamos dinamicamente y ponemos los enlaces. -->
+                <p class="fecha"><?php echo $post['fecha'];?></p>
+                <div class="thumb">
+                    <a href="single.php?=id<?php echo $post['id']; ?>">
+                      <img src="<?php echo RUTA;?>/imagenes/<?php echo $post['thumb'];?>" alt="">
+                    </a>
+                </div>
+                <p class="intro"><?php echo $post['intro'];?></p>
+                <a href="single.php?=id<?php echo $post['id']; ?>" class="continuar">Leer mas</a>
+            </article>
+         </div>
+    <?php endforeach; ?>
+   
+   
     <?php require 'paginacion.php'; //Cargamos la paginacion. ?>
 </div>
 <?php require 'footer.php'; //Cargamos el footer?>
