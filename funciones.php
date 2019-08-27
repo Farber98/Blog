@@ -56,4 +56,15 @@ function fecha($fecha)    //Estetizamos la fecha.
     $fecha = "$dia de " . $meses[$mes] . " del $year";
     return $fecha;
 }
+
+function numero_paginas($post_por_pagina,$conexion)
+{
+    $total_post = $conexion->prepare('SELECT FOUND_ROWS() as total'); //Obtenemos la cantidad de filas de nuestra BD.
+    $total_post->execute();
+    $total_post = $total_post->fetch()['total'];
+
+    $numero_paginas = ceil($total_post / $post_por_pagina); //Ceil redondea hacia arriba  
+                                                            //Calculo para saber cuantas paginas hay en la paginacion.
+    return $numero_paginas;
+}
 ?>
