@@ -67,4 +67,12 @@ function numero_paginas($post_por_pagina,$conexion)
                                                             //Calculo para saber cuantas paginas hay en la paginacion.
     return $numero_paginas;
 }
+
+
+function comprobarSesion(){
+    if(!isset($_SESSION['admin']))
+    {
+        header('Location: ' . RUTA);
+    }
+}
 ?>

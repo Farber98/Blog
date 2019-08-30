@@ -1,6 +1,6 @@
 <?php require 'header.php'; //Cargamos el header.?>
 <div class="contenedor">
-    
+    <h2><?php echo $titulo; ?></h2>
     <?php foreach($resultados as $post): ?>  <!-- Cargamos dinamicamente la BD. -->
         <div class="post">
             <article>
