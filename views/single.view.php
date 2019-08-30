@@ -8,7 +8,7 @@
             <h2 class="titulo"><?php echo $post['titulo']; ?></h2>
             <p class="fecha"><?php echo fecha($post['fecha']); ?></p>
             <div class="thumb">
-                    <img src="<?php echo RUTA; ?>/imagenes/<?php echo $post['thumb']; ?>" alt="<?php echo $post['titulo']; ?>"> <!-- No esta cargando la imagen. ver porque. -->
+                    <img src="<?php echo RUTA; ?>/imagenes/<?php echo $post['thumb']; ?>" alt="<?php echo $post['titulo']; ?>"> 
             </div>
             <p class="intro"><?php echo nl2br($post['texto']); ?></p> <!-- Reutilizamos los estilos de la intro pero es el texto. nl2br para respetar los espacios desde la BD. Cuando encuentra un espacio le agrega un BR al final. -->
         </article>

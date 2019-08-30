@@ -12,7 +12,7 @@
                     </a>
                 </div>
                 <p class="intro"><?php echo $post['intro'];?></p>
-                <a href="single.php?=id<?php echo $post['id']; ?>" class="continuar">Leer mas</a>
+                <a href="single.php?=id<?php echo $post['id'];?>" class="continuar">Leer mas</a>
             </article>
          </div>
     <?php endforeach; ?>
