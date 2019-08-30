@@ -5,6 +5,7 @@ session_start();
 require 'admin/config.php';
 require 'funciones.php';
 
+$usuario = '';  //Para que no salte el error de que no encuentra la var.
 if($_SERVER['REQUEST_METHOD'] == 'POST'){       //Obtenemos lo que el usuario ingresa en el login.
     $usuario = limpiarDatos($_POST['usuario']);
     $password = limpiarDatos($_POST['password']);
